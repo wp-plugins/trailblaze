@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Trailblaze
-Plugin URI: http://www.wearepixel8.com/
+Plugin URI: http://www.wearepixel8.com/plugins/trailblaze/
 Description: Add breadcrumb navigation to your post, pages and custom post types with a template tag.
 Version: 1.0.0
 Author: We Are Pixel8
