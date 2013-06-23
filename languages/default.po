@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Trail Blaze\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-20 14:00-0600\n"
+"PO-Revision-Date: 2013-06-20 14:00-0600\n"
+"Last-Translator: We Are Pixel8 <hello@wearepixel8.com>\n"
+"Language-Team: We Are Pixel8 <hello@wearepixel8.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../trailblaze.php:64
+msgid "Settings"
+msgstr ""
+
+#: ../includes/trailblaze-breadcrumbs.php:33
+msgid "Home"
+msgstr ""
+
+#: ../includes/trailblaze-breadcrumbs.php:135
+msgid "Search Results for &ldquo;"
+msgstr ""
+
+#: ../includes/trailblaze-breadcrumbs.php:151
+msgid "404 Error: Page not found"
+msgstr ""
+
+#: ../includes/trailblaze-breadcrumbs.php:157
+msgid "Page "
+msgstr ""
+
+#: ../includes/trailblaze-options.php:25
+msgid "Trailblaze Settings"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:26
+msgid "Trailblaze"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:71
+msgid "Save Settings"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:109
+msgid "Display Settings"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:117
+msgid "Home Page Link Label"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:126
+msgid "Breadcrumbs Separator"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:153
+msgid "You can set how your breadcrumbs will be displayed on your website. Please remember that breadcrumbs will not displayed until you have added the <code>wap8_trailblaze()</code> to your theme."
+msgstr ""
+
+#: ../includes/trailblaze-options.php:185
+msgid "If left blank, the label will default to <strong>Home</strong>. No HTML allowed."
+msgstr ""
+
+#: ../includes/trailblaze-options.php:209
+msgid "Double Right Angled Quote"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:213
+msgid "Single Right Angled Quote"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:217
+msgid "Right Arrow"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:221
+msgid "Large List Dot"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:225
+msgid "Medium List Dot"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:229
+msgid "Vertical Bar"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:233
+msgid "Broken Vertical Bar"
+msgstr ""
+
+#: ../includes/trailblaze-options.php:237
+msgid "Forward Slash"
+msgstr ""
+
