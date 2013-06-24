@@ -4,7 +4,7 @@ Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
 Compatible up to: 3.5.2
 Tested up to: 3.5.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -43,6 +43,9 @@ To add the template tag to your theme, insert the following code where you would
      wap8_trailblaze();
 } ?>`
 
+= Are there any known limitations? =
+Yes. Right now, we have not developed solution for custom taxonomies, both hierarchical and non-hierarchical, and do not recommend adding the template tag to custom taxonomy archives.
+
 == Screenshots ==
 
 1. Trailblaze Settings screen
@@ -54,3 +57,6 @@ To add the template tag to your theme, insert the following code where you would
 
 = 1.0.1 =
 * Fixed an issue with the paginated breadcrumb display
+
+= 1.0.2 =
+* Once pagination begins, the page number becomes the current crumb

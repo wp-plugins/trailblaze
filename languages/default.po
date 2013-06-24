@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Trail Blaze\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-20 14:00-0600\n"
-"PO-Revision-Date: 2013-06-20 14:00-0600\n"
+"POT-Creation-Date: 2013-06-24 13:30-0600\n"
+"PO-Revision-Date: 2013-06-24 13:30-0600\n"
 "Last-Translator: We Are Pixel8 <hello@wearepixel8.com>\n"
 "Language-Team: We Are Pixel8 <hello@wearepixel8.com>\n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,31 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: ../includes/trailblaze-breadcrumbs.php:135
+#: ../includes/trailblaze-breadcrumbs.php:140
+#: ../includes/trailblaze-breadcrumbs.php:270
 msgid "Search Results for &ldquo;"
 msgstr ""
 
-#: ../includes/trailblaze-breadcrumbs.php:151
+#: ../includes/trailblaze-breadcrumbs.php:156
 msgid "404 Error: Page not found"
 msgstr ""
 
-#: ../includes/trailblaze-breadcrumbs.php:157
+#: ../includes/trailblaze-breadcrumbs.php:176
+#: ../includes/trailblaze-breadcrumbs.php:187
+#: ../includes/trailblaze-breadcrumbs.php:196
+#: ../includes/trailblaze-breadcrumbs.php:203
+#: ../includes/trailblaze-breadcrumbs.php:211
+#: ../includes/trailblaze-breadcrumbs.php:223
+#: ../includes/trailblaze-breadcrumbs.php:233
+#: ../includes/trailblaze-breadcrumbs.php:242
+#: ../includes/trailblaze-breadcrumbs.php:264
+#: ../includes/trailblaze-breadcrumbs.php:271
+#: ../includes/trailblaze-breadcrumbs.php:280
+#: ../includes/trailblaze-breadcrumbs.php:290
+msgid " Page "
+msgstr ""
+
+#: ../includes/trailblaze-breadcrumbs.php:295
 msgid "Page "
 msgstr ""
 
