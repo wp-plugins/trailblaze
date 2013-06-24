@@ -157,9 +157,13 @@ function wap8_trailblaze() {
 			
 		}
 		
-		if ( get_query_var('paged') ) {
+		if ( get_query_var( 'paged' ) ) {
 			
-			echo ' ' . $separator . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() || is_post_type_archive() ) {
+				echo ' ' . $separator . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' );
+			} else {
+				echo __( 'Page ','wap8plugin-i18n' ) . get_query_var( 'paged' );
+			}
 			
 		}
 		
