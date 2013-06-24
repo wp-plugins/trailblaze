@@ -1,4 +1,9 @@
-Trail Blaze 1.0.0
-=================
+Trailblaze 1.0.0
+================
 
 * Initial release
+
+Trailblaze 1.0.1
+================
+
+* Fixed an issue with the paginated breadcrumb display

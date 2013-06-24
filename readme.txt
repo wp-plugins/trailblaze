@@ -2,9 +2,9 @@
 Contributors: wearepixel8
 Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
-Compatible up to: 3.5.1
-Tested up to: 3.5.1
-Stable tag: 1.0.0
+Compatible up to: 3.5.2
+Tested up to: 3.5.2
+Stable tag: 1.0.1
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -51,3 +51,6 @@ To add the template tag to your theme, insert the following code where you would
 
 = 1.0.0 =
 * Initial release
+
+= 1.0.1 =
+* Fixed an issue with the paginated breadcrumb display

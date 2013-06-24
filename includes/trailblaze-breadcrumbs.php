@@ -12,7 +12,7 @@
  *
  * @package Trailblaze
  * @version 1.0.0
- * @since 1.0.0
+ * @since 1.0.1 Fixed an issue with the paginated breadcrumb display
  * @author Erik Ford for We Are Pixel8 <@notdivisible>
  *
  */
@@ -159,7 +159,7 @@ function wap8_trailblaze() {
 		
 		if ( get_query_var('paged') ) {
 			
-			echo $current_before . __( 'Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+			echo ' ' . $separator . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
 			
 		}
 		
