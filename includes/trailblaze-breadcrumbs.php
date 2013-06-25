@@ -12,15 +12,14 @@
  *
  * @package Trailblaze
  * @version 1.0.0
- * @since 1.0.2 Once pagination begins, the page number becomes the current crumb
+ * @since 1.0.3 Fixed an issue where breadcrumbs were not displaying on paginated pages and single posts
  * @author Erik Ford for We Are Pixel8 <@notdivisible>
  *
  */
 
 function wap8_trailblaze() {
 	
-	global $post;
-	global $wp_query;
+	global $post, $wp_query, $page, $paged;
 	
 	// pluign settings
 	$options    = get_option( '_wap8_trailblaze_settings' );
@@ -81,7 +80,7 @@ function wap8_trailblaze() {
 			$post_type = get_post_type_object( get_post_type( get_the_ID() ) );
 			echo $current_before . esc_attr( $post_type->labels->singular_name ) . $current_after;
 			
-		} else if ( is_single() && !is_attachment() && !is_paged() ) {
+		} else if ( is_single() && !is_attachment() && $page < 2 ) {
 			
 			if ( get_post_type() != 'post' ) {
 				
@@ -99,7 +98,31 @@ function wap8_trailblaze() {
 				echo get_category_parents( $cat, true, ' ' . $separator . ' ' );
 				echo $current_before . esc_attr( get_the_title() ) . $current_after;
 				
-			} 
+			}
+			
+		} else if ( is_single() && !is_attachment() && $page >=2 ) {
+				
+			if ( get_post_type() != 'post' ) {
+
+				$post_type    = get_post_type_object( get_post_type( get_the_ID() ) );
+				$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
+				$post_link    = get_permalink( $post->ID );
+
+				echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->singular_name ) . "</a> " . $separator . " ";
+				echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
+				echo $current_before . sprintf( __( ' Page %s', 'wap8theme-i18n' ), get_query_var( 'page' ) ) . $current_after;
+
+			} else {
+
+				$cat       = get_the_category();
+				$cat       = $cat[0];
+				$post_link = get_permalink( $post->ID );
+
+				echo get_category_parents( $cat, true, ' ' . $separator . ' ' );
+				echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
+				echo $current_before . sprintf( __( ' Page %s', 'wap8theme-i18n' ), get_query_var( 'page' ) ) . $current_after;
+
+			}
 			
 		} else if ( is_attachment() ) {
 			
@@ -111,11 +134,20 @@ function wap8_trailblaze() {
 			echo "<a href='" . esc_url( get_permalink( $parent ) ) . "'>" . esc_attr( $parent->post_title ) . "</a> " . $separator . " ";
 			echo $current_before . esc_attr( get_the_title() ) . $current_after;
 			
-		} else if ( is_page() && !$post->post_parent && !is_paged() ) {
+		} else if ( is_page() && !$post->post_parent && $page < 2 ) {
+			
+			echo $page;
 			
 			echo $current_before . esc_attr( get_the_title() ) . $current_after;
 			
-		} else if ( is_page() && $post->post_parent && !is_paged() ) {
+		} else if ( is_page() && !$post->post_parent && $page >= 2 ) {
+			
+			$post_link = get_permalink( $post->ID );
+			
+			echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
+			echo $current_before . sprintf( __( ' Page %s', 'wap8theme-i18n' ), get_query_var( 'page' ) ) . $current_after;
+			
+		} else if ( is_page() && $post->post_parent && $page < 2 ) {
 			
 			$parent_id   = $post->post_parent;
 			$breadcrumbs = array();
@@ -134,6 +166,28 @@ function wap8_trailblaze() {
 				echo $crumb . ' ' . $separator . ' ';
 			
 			echo $current_before . esc_attr( get_the_title() ) . $current_after;
+			
+		} else if ( is_page() && $post->post_parent && $page >= 2 ) {
+			
+			$parent_id   = $post->post_parent;
+			$breadcrumbs = array();
+			$post_link   = get_permalink( $post->ID );
+
+			while ( $parent_id ) {
+
+				$page          = get_page( $parent_id );
+				$breadcrumbs[] = '<a href="' . esc_url( get_permalink( $page->ID ) ) . '">' . esc_attr( get_the_title( $page->ID ) ) . '</a>';
+				$parent_id     = $page->post_parent;
+
+			}
+
+			$breadcrumbs = array_reverse( $breadcrumbs );
+
+			foreach ( $breadcrumbs as $crumb )
+				echo $crumb . ' ' . $separator . ' ';
+
+			echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
+			echo $current_before . sprintf( __( ' Page %s', 'wap8theme-i18n' ), get_query_var( 'page' ) ) . $current_after;
 			
 		} else if ( is_search() && !is_paged() ) {
 			
@@ -159,7 +213,7 @@ function wap8_trailblaze() {
 		
 		if ( get_query_var( 'paged' ) ) {
 			
-			if ( is_category() || is_day() || is_month() || is_year() || is_post_type_archive() || is_single() || is_page() || is_search() || is_tag() || is_author() ) {
+			if ( is_category() || is_day() || is_month() || is_year() || is_post_type_archive() || is_search() || is_tag() || is_author() ) {
 				
 				if ( is_category() ) {
 					
@@ -208,59 +262,6 @@ function wap8_trailblaze() {
 					$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
 					
 					echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->singular_name ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
-					
-				} else if ( is_single() && !is_attachment() ) {
-					
-					if ( get_post_type() != 'post' ) {
-
-						$post_type    = get_post_type_object( get_post_type( get_the_ID() ) );
-						$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
-						$post_link    = get_permalink( $post->ID );
-
-						echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->singular_name ) . "</a> " . $separator . " ";
-						echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
-						echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
-
-					} else {
-
-						$cat       = get_the_category();
-						$cat       = $cat[0];
-						$post_link = get_permalink( $post->ID );
-
-						echo get_category_parents( $cat, true, ' ' . $separator . ' ' );
-						echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
-						echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
-
-					}
-					
-				} else if ( is_page() && !$post->post_parent ) {
-					
-					$post_link = get_permalink( $post->ID );
-					
-					echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
-					
-				} else if ( is_page() && $post->post_parent ) {
-					
-					$parent_id   = $post->post_parent;
-					$breadcrumbs = array();
-					$post_link   = get_permalink( $post->ID );
-
-					while ( $parent_id ) {
-
-						$page          = get_page( $parent_id );
-						$breadcrumbs[] = '<a href="' . esc_url( get_permalink( $page->ID ) ) . '">' . esc_attr( get_the_title( $page->ID ) ) . '</a>';
-						$parent_id     = $page->post_parent;
-
-					}
-
-					$breadcrumbs = array_reverse( $breadcrumbs );
-
-					foreach ( $breadcrumbs as $crumb )
-						echo $crumb . ' ' . $separator . ' ';
-
-					echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
 					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
 					
 				} else if ( is_search() ) {

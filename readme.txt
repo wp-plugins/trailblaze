@@ -4,7 +4,7 @@ Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
 Compatible up to: 3.5.2
 Tested up to: 3.5.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -19,7 +19,7 @@ You can install Trailblaze either via the WordPress Dashboard or by uploading th
 
 Once the plugin has been activated, visit the Settings page to customize the Home link label and the breadcrumbs separator.
 
-To add the template tag to your theme, insert the following code where you would like the breadcrumb trail to appear.
+To add the template tag to your theme, insert the following code, preferably outside of the loop, where you would like the breadcrumb trail to appear.
 
 `<?php if ( function_exists( 'wap8_trailblaze' ) ) {
      wap8_trailblaze();
@@ -37,7 +37,7 @@ The HTML elements that will wrap the breadcrumbs are:
 We found that we were reproducing this functionality for many of our clients and premium themes and thought it would be better suited as a freely available plugin instead of a theme template.
 
 = How do I add the template tag to my theme? =
-To add the template tag to your theme, insert the following code where you would like the breadcrumb trail to appear.
+To add the template tag to your theme, insert the following code, preferably outside of the loop, where you would like the breadcrumb trail to appear.
 
 `<?php if ( function_exists( 'wap8_trailblaze' ) ) {
      wap8_trailblaze();
@@ -60,3 +60,6 @@ Yes. Right now, we have not developed solution for custom taxonomies, both hiera
 
 = 1.0.2 =
 * Once pagination begins, the page number becomes the current crumb
+
+= 1.0.3 =
+* Fixed an issue where breadcrumbs were not displaying on paginated pages and single posts
