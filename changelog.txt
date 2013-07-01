@@ -17,3 +17,8 @@ Trailblaze 1.0.3
 ================
 
 * Fixed an issue where breadcrumbs were not displaying on paginated pages and single posts
+
+Trailblaze 1.0.4
+================
+
+* Fixed an issue where the page order was being echoed in the breadcrumb

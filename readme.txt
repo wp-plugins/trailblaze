@@ -4,7 +4,7 @@ Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
 Compatible up to: 3.5.2
 Tested up to: 3.5.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -63,3 +63,6 @@ Yes. Right now, we have not developed solution for custom taxonomies, both hiera
 
 = 1.0.3 =
 * Fixed an issue where breadcrumbs were not displaying on paginated pages and single posts
+
+= 1.0.4 =
+* Fixed an issue where the page order was being echoed in the breadcrumb

@@ -12,7 +12,7 @@
  *
  * @package Trailblaze
  * @version 1.0.0
- * @since 1.0.3 Fixed an issue where breadcrumbs were not displaying on paginated pages and single posts
+ * @since 1.0.4 Fixed an issue where the page order was being echoed in the breadcrumb
  * @author Erik Ford for We Are Pixel8 <@notdivisible>
  *
  */
@@ -135,8 +135,6 @@ function wap8_trailblaze() {
 			echo $current_before . esc_attr( get_the_title() ) . $current_after;
 			
 		} else if ( is_page() && !$post->post_parent && $page < 2 ) {
-			
-			echo $page;
 			
 			echo $current_before . esc_attr( get_the_title() ) . $current_after;
 			
