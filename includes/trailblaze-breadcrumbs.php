@@ -12,7 +12,7 @@
  *
  * @package Trailblaze
  * @version 1.0.0
- * @since 1.0.4 Fixed an issue where the page order was being echoed in the breadcrumb
+ * @since 1.0.5 Fixed an issue where the custom post type name was singular
  * @author Erik Ford for We Are Pixel8 <@notdivisible>
  *
  */
@@ -78,7 +78,7 @@ function wap8_trailblaze() {
 		} else if ( is_post_type_archive() && !is_paged() ) {
 			
 			$post_type = get_post_type_object( get_post_type( get_the_ID() ) );
-			echo $current_before . esc_attr( $post_type->labels->singular_name ) . $current_after;
+			echo $current_before . esc_attr( $post_type->labels->name ) . $current_after;
 			
 		} else if ( is_single() && !is_attachment() && $page < 2 ) {
 			
@@ -259,7 +259,7 @@ function wap8_trailblaze() {
 					$post_type    = get_post_type_object( get_post_type( get_the_ID() ) );
 					$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
 					
-					echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->singular_name ) . "</a> " . $separator . " ";
+					echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->name ) . "</a> " . $separator . " ";
 					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
 					
 				} else if ( is_search() ) {

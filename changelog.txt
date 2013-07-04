@@ -22,3 +22,8 @@ Trailblaze 1.0.4
 ================
 
 * Fixed an issue where the page order was being echoed in the breadcrumb
+
+Trailblaze 1.0.5
+================
+
+* Fixed an issue where the custom post type name was singular
