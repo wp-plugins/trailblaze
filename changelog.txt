@@ -27,3 +27,9 @@ Trailblaze 1.0.5
 ================
 
 * Fixed an issue where the custom post type name was singular
+
+Trailblaze 1.0.6
+================
+
+* The custom post type name should universally be plural
+* Added custom taxonomy archive condition to breadcrumbs

@@ -4,7 +4,7 @@ Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
 Compatible up to: 3.5.2
 Tested up to: 3.5.2
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -44,7 +44,7 @@ To add the template tag to your theme, insert the following code, preferably out
 } ?>`
 
 = Are there any known limitations? =
-Yes. Right now, we have not developed solution for custom taxonomies, both hierarchical and non-hierarchical, and do not recommend adding the template tag to custom taxonomy archives.
+Yes. Though we have added custom taxonomy archives to the breadcrumbs, the breadcrumbs will not return a hierarchical list when browsing a custom taxonomy archive that is hierarchical.
 
 == Screenshots ==
 
@@ -69,3 +69,7 @@ Yes. Right now, we have not developed solution for custom taxonomies, both hiera
 
 = 1.0.5 =
 * Fixed an issue where the custom post type name was singular
+
+= 1.0.6 =
+* The custom post type name should universally be plural
+* Added custom taxonomy archives condition to the breadcrumbs

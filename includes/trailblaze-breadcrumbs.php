@@ -12,7 +12,7 @@
  *
  * @package Trailblaze
  * @version 1.0.0
- * @since 1.0.5 Fixed an issue where the custom post type name was singular
+ * @since 1.0.6 Added custom taxonomy archives condition to the breadcrumbs
  * @author Erik Ford for We Are Pixel8 <@notdivisible>
  *
  */
@@ -55,6 +55,20 @@ function wap8_trailblaze() {
 			
 			echo $current_before . single_cat_title( '', false ) . $current_after;
 			
+		} else if ( is_tax() && !is_paged() ) {
+			
+			$term      = $wp_query->get_queried_object();
+			$this_term = $term->name;
+			$tax       = get_taxonomy( $term->taxonomy );
+			
+			// get the custom post type associated with this custom taxonomy
+			$pt         = get_post_type_object( $tax->object_type[0] );
+			$pt_name    = $pt->labels->name;
+			$pt_archive = get_post_type_archive_link( $tax->object_type[0] );
+			
+			echo "<a href='" . esc_url( $pt_archive )  . "'>" . esc_attr( $pt_name ) . "</a> " . $separator . " ";	
+			echo $current_before . esc_attr( $this_term ) . $current_after;
+		
 		} else if ( is_day() && !is_paged() ) {
 			
 			$year_link  = get_year_link( get_the_time( 'Y' ) );
@@ -87,7 +101,7 @@ function wap8_trailblaze() {
 				$post_type    = get_post_type_object( get_post_type( get_the_ID() ) );
 				$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
 				
-				echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->singular_name ) . "</a> " . $separator . " ";
+				echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->name ) . "</a> " . $separator . " ";
 				echo $current_before . esc_attr( get_the_title() ) . $current_after;
 			
 			} else {
@@ -108,7 +122,7 @@ function wap8_trailblaze() {
 				$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
 				$post_link    = get_permalink( $post->ID );
 
-				echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->singular_name ) . "</a> " . $separator . " ";
+				echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_attr( $post_type->labels->name ) . "</a> " . $separator . " ";
 				echo "<a href='" . esc_url( $post_link ) . "'>" . esc_attr( get_the_title() ) . "</a> " . $separator . " ";
 				echo $current_before . sprintf( __( ' Page %s', 'wap8theme-i18n' ), get_query_var( 'page' ) ) . $current_after;
 
@@ -211,7 +225,7 @@ function wap8_trailblaze() {
 		
 		if ( get_query_var( 'paged' ) ) {
 			
-			if ( is_category() || is_day() || is_month() || is_year() || is_post_type_archive() || is_search() || is_tag() || is_author() ) {
+			if ( is_category() || is_tax() || is_day() || is_month() || is_year() || is_post_type_archive() || is_search() || is_tag() || is_author() ) {
 				
 				if ( is_category() ) {
 					
@@ -227,6 +241,24 @@ function wap8_trailblaze() {
 					echo "<a href='" . esc_url( $cat_link ) . "'>" . single_cat_title( '', false ) . "</a>" . " " . $separator . " ";
 					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
 					
+				} else if ( is_tax() ) {
+
+					$term      = $wp_query->get_queried_object();
+					$this_term = $term->name;
+					$tax       = get_taxonomy( $term->taxonomy );
+					$tax_link  = get_term_link( get_term( $term->term_id, $term->taxonomy ) );
+					
+					// get the custom post type associated with this custom taxonomy
+					$pt         = get_post_type_object( $tax->object_type[0] );
+					$pt_name    = $pt->labels->name;
+					$pt_archive = get_post_type_archive_link( $tax->object_type[0] );
+					
+					if ( !is_wp_error( $tax_link ) ) {
+						echo "<a href='" . esc_url( $pt_archive )  . "'>" . esc_attr( $pt_name ) . "</a> " . $separator . " ";
+						echo "<a href='" . esc_url( $tax_link )  . "'>" . esc_attr( $this_term ) . "</a> " . $separator . " ";
+						echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					}
+				
 				} else if ( is_day() ) {
 
 					$year_link  = get_year_link( get_the_time( 'Y' ) );
