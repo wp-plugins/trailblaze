@@ -12,7 +12,7 @@
  *
  * @package Trailblaze
  * @version 1.0.0
- * @since 1.0.6 Added custom taxonomy archives condition to the breadcrumbs
+ * @since 1.0.7 Added a condition for when Reading Settings for blog posts has a Posts page set
  * @author Erik Ford for We Are Pixel8 <@notdivisible>
  *
  */
@@ -35,7 +35,7 @@ function wap8_trailblaze() {
 	$current_before = '<span class="current-crumb">';
 	$current_after  = '</span>';
 	
-	if ( !is_home() && !is_front_page() || is_paged() ) {
+	if ( !is_home() && !is_front_page() || is_paged() || $wp_query->is_posts_page ) {
 		
 		echo "<nav class='breadcrumbs' itemprop='breadcrumbs'>\n";
 		
@@ -43,7 +43,13 @@ function wap8_trailblaze() {
 		
 		echo "\t<a href='" . esc_url( $home ) . "'>" . $label . "</a> " . $separator . " ";
 		
-		if ( is_category() && !is_paged() ) {
+		if ( $wp_query->is_posts_page && !is_paged() ) {
+			
+			$pp = get_the_title( get_option( 'page_for_posts', true ) );
+			
+			echo $current_before . esc_attr( $pp ) . $current_after;
+			
+		} else if ( is_category() && !is_paged() ) {
 			
 			$cat_obj    = $wp_query->get_queried_object();
 			$this_cat   = $cat_obj->term_id;
@@ -225,9 +231,17 @@ function wap8_trailblaze() {
 		
 		if ( get_query_var( 'paged' ) ) {
 			
-			if ( is_category() || is_tax() || is_day() || is_month() || is_year() || is_post_type_archive() || is_search() || is_tag() || is_author() ) {
+			if ( $wp_query->is_posts_page || is_category() || is_tax() || is_day() || is_month() || is_year() || is_post_type_archive() || is_search() || is_tag() || is_author() ) {
 				
-				if ( is_category() ) {
+				if ( $wp_query->is_posts_page ) {
+					
+					$pp      = get_the_title( get_option( 'page_for_posts', true ) );
+					$pp_link = get_permalink( get_option( 'page_for_posts' ) );
+					
+					echo "<a href='" . esc_url( $pp_link ) . "'>" . esc_attr( $pp ) . "</a>" . " " . $separator . " ";
+					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					
+				} else if ( is_category() ) {
 					
 					$cat_obj    = $wp_query->get_queried_object();
 					$this_cat   = $cat_obj->term_id;
