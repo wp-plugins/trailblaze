@@ -38,3 +38,9 @@ Trailblaze 1.0.7
 ================
 
 * Added a condition for when Reading Settings for blog posts has a Posts page set
+
+Trailblaze 1.0.8
+================
+
+* Properly escaping HTML in the output
+* Updated the base language file

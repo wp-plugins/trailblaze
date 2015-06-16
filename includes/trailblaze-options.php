@@ -1,5 +1,4 @@
 <?php
-
 /*-----------------------------------------------------------------------------------*/
 /* Trailblaze Sub Menu Page
 /*-----------------------------------------------------------------------------------*/
@@ -14,12 +13,12 @@ add_action( 'admin_menu', 'wap8_trailblaze_submenu_page', 10 );
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_trailblaze_submenu_page() {
-	
+
 	add_submenu_page(
 		'options-general.php',                           // parent page to add the menu link to
 		__( 'Trailblaze Settings', 'wap8plugin-i18n' ),  // page title
@@ -28,7 +27,7 @@ function wap8_trailblaze_submenu_page() {
 		'wap8-trailblaze-options',                       // unique ID for this menu page
 		'wap8_trailblaze_options_cb'                     // callback function to render the page HTML
 	);
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -43,27 +42,25 @@ function wap8_trailblaze_submenu_page() {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_trailblaze_options_cb() {
-	
+
 	global $submenu;
-	
+
 	$page_data = array();
-	
+
 	foreach ( $submenu['options-general.php'] as $i => $menu_item ) {
 		if ( $submenu['options-general.php'][$i][2] == 'wap8-trailblaze-options' )
 			$page_data = $submenu['options-general.php'][$i];
-	}
-	
-?>
+	} ?>
 <div class="wrap">
 	<?php screen_icon();?>
-	
+
 	<h2><?php echo esc_attr( $page_data[3] ); ?></h2>
-	
+
 	<form id="wap8_trailblaze_options" action="options.php" method="post">
 		<?php
 			settings_fields( '_wap8_trailblaze_settings_group' );
@@ -73,7 +70,7 @@ function wap8_trailblaze_options_cb() {
 	</form>
 </div>	
 <?php
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -90,19 +87,19 @@ add_action( 'admin_init', 'wap8_trailblaze_admin_init', 10 );
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_trailblaze_admin_init() {
-	
+
 	// register setting
 	register_setting(
 		'_wap8_trailblaze_settings_group', // unique option group
 		'_wap8_trailblaze_settings',       // unique option name
 		'wap8_trailblaze_sanitization_cb'  // callback function to sanitize form inputs
 	);
-	
+
 	// add display settings section
 	add_settings_section(
 		'trailblaze_display_settings_section',         // unique ID for this section
@@ -110,7 +107,7 @@ function wap8_trailblaze_admin_init() {
 		'wap8_trailblaze_display_settings_section_cb', // callback function to render a description for this section
 		'wap8-trailblaze-options'                      // page ID to render this section on
 	);
-	
+
 	// add settings field for home page link label
 	add_settings_field(
 		'trailblaze_home',                               // unique ID for this field
@@ -119,7 +116,7 @@ function wap8_trailblaze_admin_init() {
 		'wap8-trailblaze-options',                       // page ID to render this form input
 		'trailblaze_display_settings_section'            // section ID where this form input should appear
 	);
-	
+
 	// add settings field for breadcrumbs separator
 	add_settings_field(
 		'trailblaze_separator',                           // unique ID for this field
@@ -128,7 +125,7 @@ function wap8_trailblaze_admin_init() {
 		'wap8-trailblaze-options',                        // page ID to render this form input
 		'trailblaze_display_settings_section'             // section ID where this form input should appear
 	);
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -143,7 +140,7 @@ function wap8_trailblaze_admin_init() {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
@@ -167,12 +164,12 @@ function wap8_trailblaze_display_settings_section_cb() {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_trailblaze_home_label_field_cb() {
-	
+
 	$options = wp_parse_args(
 		get_option(
 			'_wap8_trailblaze_settings' ),
@@ -180,10 +177,10 @@ function wap8_trailblaze_home_label_field_cb() {
 				'trailblaze_home' => '',
 			)
 		);
-	
+
 	echo "<input type='text' id='trailblaze_home' name='_wap8_trailblaze_settings[trailblaze_home]' class='regular-text' value='{$options['trailblaze_home']}' />";
 	echo "<p class='description'>" . __( 'If left blank, the label will default to <strong>Home</strong>. No HTML allowed.', 'wap8plugin-i18n' ) . "</p>";
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -198,12 +195,12 @@ function wap8_trailblaze_home_label_field_cb() {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_get_trailblaze_separator_items() {
-	
+
 	$items = array(
 		'double-right-angled-quote' => array(
 			'label'  => __( 'Double Right Angled Quote', 'wap8plugin-i18n' ),
@@ -238,9 +235,9 @@ function wap8_get_trailblaze_separator_items() {
 			'entity' => '&#047;',
 		),
 	);
-	
+
 	return $items;
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -258,15 +255,15 @@ function wap8_get_trailblaze_separator_items() {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_convert_trailblaze_separator_items( $key ) {
-	
+
 	$items = wap8_get_trailblaze_separator_items();
 	return ( isset( $items[ $key ] ) ) ? $items[ $key ]['entity'] : '';
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -281,12 +278,12 @@ function wap8_convert_trailblaze_separator_items( $key ) {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_trailblaze_separator_field_cb() {
-	
+
 	$options = wp_parse_args(
 		get_option(
 			'_wap8_trailblaze_settings' ),
@@ -294,14 +291,14 @@ function wap8_trailblaze_separator_field_cb() {
 				'trailblaze_separator' => '',
 			)
 		);
-	
+
 	$items = wap8_get_trailblaze_separator_items();
-	
+
 	foreach ( $items as $key => $value ) {
 		$checked = $options['trailblaze_separator'];
 		echo "<label><input name='_wap8_trailblaze_settings[trailblaze_separator]' value='" . $key . "' " . checked( $checked, $key, false ) . " type='radio' /> <span>" . $value['label'] . "</span></label><br />";
 	}
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -318,17 +315,17 @@ function wap8_trailblaze_separator_field_cb() {
  * @package Trailblaze
  * @version 1.0.0
  * @since 1.0.0
- * @author Erik Ford for We Are Pixel8 <@notdivisible>
+ * @author Heavy Heavy <@heavyheavyco>
  *
  */
 
 function wap8_trailblaze_sanitization_cb( $input ) {
-	
+
 	$input['trailblaze_home'] = wp_strip_all_tags( $input['trailblaze_home'] ); // home page label
-	
+
 	// ensure 'trailblaze_separator' always exists after the first save.
 	$input['trailblaze_separator'] = ( empty( $input['trailblaze_separator'] ) ) ? '' : $input['trailblaze_separator'];
-	
+
 	return $input;
-	
+
 }

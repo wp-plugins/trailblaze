@@ -1,10 +1,10 @@
 === Trailblaze ===
-Contributors: wearepixel8
+Contributors: heavyheavy, wearepixel8
 Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
-Compatible up to: 3.9
-Tested up to: 3.9
-Stable tag: 1.0.7
+Compatible up to: 4.2.2
+Tested up to: 4.2.2
+Stable tag: 1.0.8
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -49,6 +49,8 @@ Yes. Though we have added custom taxonomy archives to the breadcrumbs, the bread
 == Screenshots ==
 
 1. Trailblaze Settings screen
+2. Trailblaze output on date based archive
+3. Trailblaze output on single post entry
 
 == Changelog ==
 
@@ -76,3 +78,7 @@ Yes. Though we have added custom taxonomy archives to the breadcrumbs, the bread
 
 = 1.0.7 =
 * Added a condition for when Reading Settings for blog posts has a Posts page set
+
+= 1.0.8 =
+* Properly escaping HTML in the output
+* Updated the base language file
