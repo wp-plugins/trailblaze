@@ -3,9 +3,10 @@
 Plugin Name: Trailblaze
 Plugin URI: http://heavyheavy.com
 Description: Add breadcrumb navigation to your post, pages and custom post types with a template tag.
-Version: 1.0.8
+Version: 1.0.9
 Author: Heavy Heavy
 Author URI: http://heavyheavy.com
+Conributors: We Are Pixel8
 License:
 	Copyright 2013 — 2015 Heavy Heavy <@heavyheavyco>
 	
@@ -60,7 +61,7 @@ add_filter( 'plugin_action_links', 'wap8_trailblaze_settings_link', 10, 2 );
 function wap8_trailblaze_settings_link( $links, $file ) {
 
 	if ( $file == plugin_basename( __FILE__ ) && current_user_can( 'manage_options' ) ) {
-		$links[] = '<a href="' . admin_url( 'options-general.php?page=wap8-trailblaze-options' ) . '">' . __( 'Settings', 'wap8plugin-i18n' ) . '</a>';
+		$links[] = '<a href="' . admin_url( 'options-general.php?page=wap8-trailblaze-options' ) . '">' . __( 'Settings', 'trailblaze' ) . '</a>';
 	}
 
 	return $links;
@@ -87,6 +88,6 @@ add_action( 'plugins_loaded', 'wap8_plugin_text_domain', 10 );
 
 function wap8_plugin_text_domain() {
 
-	load_plugin_textdomain( 'wap8plugin-i18n', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'trailblaze', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 }

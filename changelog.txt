@@ -44,3 +44,8 @@ Trailblaze 1.0.8
 
 * Properly escaping HTML in the output
 * Updated the base language file
+
+Trailblaze 1.0.9
+================
+
+* Changed text domain name space and updated language files

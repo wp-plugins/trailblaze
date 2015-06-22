@@ -28,7 +28,7 @@ function wap8_trailblaze() {
 	if ( !empty( $home_label ) ) {
 		$label = esc_attr( $home_label );
 	} else {
-		$label = __( 'Home', 'wap8plugin-i18n' );
+		$label = __( 'Home', 'trailblaze' );
 	}
 
 	$current_before = '<span class="current-crumb">';
@@ -208,7 +208,7 @@ function wap8_trailblaze() {
 
 		} else if ( is_search() && !is_paged() ) {
 
-			echo $current_before . __( 'Search Results for &ldquo;', 'wap8plugin-i18n' ) . esc_html( get_search_query() ) . '&rdquo;' . $current_after;
+			echo $current_before . __( 'Search Results for &ldquo;', 'trailblaze' ) . esc_html( get_search_query() ) . '&rdquo;' . $current_after;
 
 		} else if ( is_tag() && !is_paged() ) {
 
@@ -224,7 +224,7 @@ function wap8_trailblaze() {
 
 		} else if ( is_404() ) {
 
-			echo $current_before . __( '404 Error: Page not found', 'wap8plugin-i18n' ) . $current_after;
+			echo $current_before . __( '404 Error: Page not found', 'trailblaze' ) . $current_after;
 
 		}
 
@@ -238,7 +238,7 @@ function wap8_trailblaze() {
 					$pp_link = get_permalink( get_option( 'page_for_posts' ) );
 
 					echo "<a href='" . esc_url( $pp_link ) . "'>" . esc_html( $pp ) . "</a>" . " " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_category() ) {
 
@@ -252,7 +252,7 @@ function wap8_trailblaze() {
 						echo ( get_category_parents( $parent_cat, true, ' ' . $separator . ' ' ) );
 
 					echo "<a href='" . esc_url( $cat_link ) . "'>" . single_cat_title( '', false ) . "</a>" . " " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_tax() ) {
 
@@ -269,7 +269,7 @@ function wap8_trailblaze() {
 					if ( !is_wp_error( $tax_link ) ) {
 						echo "<a href='" . esc_url( $pt_archive )  . "'>" . esc_attr( $pt_name ) . "</a> " . $separator . " ";
 						echo "<a href='" . esc_url( $tax_link )  . "'>" . esc_attr( $this_term ) . "</a> " . $separator . " ";
-						echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+						echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 					}
 
 				} else if ( is_day() ) {
@@ -281,7 +281,7 @@ function wap8_trailblaze() {
 					echo "<a href='" . esc_url( $year_link )  . "'>" . get_the_time( 'Y' ) . "</a> " . $separator . " ";
 					echo "<a href='" . esc_url( $month_link ) . "'>" . esc_attr( get_the_time( 'F' ) ) . "</a> " . $separator . " ";
 					echo "<a href='" . esc_url( $day_link ) . "'>" . esc_attr( get_the_time( 'd' ) ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_month() ) {
 
@@ -290,14 +290,14 @@ function wap8_trailblaze() {
 
 					echo "<a href='" . esc_url( $year_link ) . "'>" . get_the_time( 'Y' ) . "</a> " . $separator . " ";
 					echo "<a href='" . esc_url( $month_link ) . "'>" . esc_attr( get_the_time( 'F' ) ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_year() ) {
 
 					$year_link  = get_year_link( get_the_time( 'Y' ) );
 
 					echo "<a href='" . esc_url( $year_link ) . "'>" . get_the_time( 'Y' ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_post_type_archive() ) {
 
@@ -305,14 +305,14 @@ function wap8_trailblaze() {
 					$posttype_url = get_post_type_archive_link( get_post_type( get_the_ID() ) );
 
 					echo "<a href='" . esc_url( $posttype_url ) . "'>" . esc_html( $post_type->labels->name ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_search() ) {
 
 					$searched = get_search_link( get_search_query() );
 
-					echo "<a href='" . esc_url( $searched ) . "'>" . __( 'Search Results for &ldquo;', 'wap8plugin-i18n' ) . esc_attr( get_search_query() ) . '&rdquo;' . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo "<a href='" . esc_url( $searched ) . "'>" . __( 'Search Results for &ldquo;', 'trailblaze' ) . esc_attr( get_search_query() ) . '&rdquo;' . "</a> " . $separator . " ";
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_tag() ) {
 
@@ -321,7 +321,7 @@ function wap8_trailblaze() {
 					$tag_link = get_tag_link( $this_tag );
 
 					echo "<a href='" . esc_url( $tag_link ) . "'>" . single_tag_title( '', false ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				} else if ( is_author() ) {
 
@@ -331,12 +331,12 @@ function wap8_trailblaze() {
 					$author_posts = get_author_posts_url( $userdata->ID );
 
 					echo "<a href='" . esc_url( $author_posts ) . "'>" . esc_html( $userdata->display_name ) . "</a> " . $separator . " ";
-					echo $current_before . __( ' Page ','wap8plugin-i18n' ) . get_query_var( 'paged' ) . $current_after;
+					echo $current_before . __( ' Page ','trailblaze' ) . get_query_var( 'paged' ) . $current_after;
 
 				}
 
 			} else {
-				echo __( 'Page ','wap8plugin-i18n' ) . get_query_var( 'paged' );
+				echo __( 'Page ','trailblaze' ) . get_query_var( 'paged' );
 			}
 
 		}

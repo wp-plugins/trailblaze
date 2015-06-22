@@ -1,0 +1,147 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Trailblaze\n"
+"POT-Creation-Date: 2015-06-22 16:58-0600\n"
+"PO-Revision-Date: 2015-06-22 16:58-0600\n"
+"Last-Translator: Heavy Heavy <hello@heavyheavy.com>\n"
+"Language-Team: Heavy Heavy <hello@heavyheavy.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: trailblaze.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/trailblaze-breadcrumbs.php:31
+msgid "Home"
+msgstr ""
+
+#: includes/trailblaze-breadcrumbs.php:132
+#: includes/trailblaze-breadcrumbs.php:142
+#: includes/trailblaze-breadcrumbs.php:165
+#: includes/trailblaze-breadcrumbs.php:207
+#, php-format
+msgid " Page %s"
+msgstr ""
+
+#: includes/trailblaze-breadcrumbs.php:211
+#: includes/trailblaze-breadcrumbs.php:314
+msgid "Search Results for &ldquo;"
+msgstr ""
+
+#: includes/trailblaze-breadcrumbs.php:227
+msgid "404 Error: Page not found"
+msgstr ""
+
+#: includes/trailblaze-breadcrumbs.php:241
+#: includes/trailblaze-breadcrumbs.php:255
+#: includes/trailblaze-breadcrumbs.php:272
+#: includes/trailblaze-breadcrumbs.php:284
+#: includes/trailblaze-breadcrumbs.php:293
+#: includes/trailblaze-breadcrumbs.php:300
+#: includes/trailblaze-breadcrumbs.php:308
+#: includes/trailblaze-breadcrumbs.php:315
+#: includes/trailblaze-breadcrumbs.php:324
+#: includes/trailblaze-breadcrumbs.php:334
+msgid " Page "
+msgstr ""
+
+#: includes/trailblaze-breadcrumbs.php:339
+msgid "Page "
+msgstr ""
+
+#: includes/trailblaze-options.php:24
+msgid "Trailblaze Settings"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: includes/trailblaze-options.php:25
+msgid "Trailblaze"
+msgstr ""
+
+#: includes/trailblaze-options.php:68
+msgid "Save Settings"
+msgstr ""
+
+#: includes/trailblaze-options.php:106
+msgid "Display Settings"
+msgstr ""
+
+#: includes/trailblaze-options.php:114
+msgid "Home Page Link Label"
+msgstr ""
+
+#: includes/trailblaze-options.php:123
+msgid "Breadcrumbs Separator"
+msgstr ""
+
+#: includes/trailblaze-options.php:150
+msgid ""
+"You can set how your breadcrumbs will be displayed on your website. Please "
+"remember that breadcrumbs will not displayed until you have added the "
+"<code>wap8_trailblaze()</code> to your theme."
+msgstr ""
+
+#: includes/trailblaze-options.php:182
+msgid ""
+"If left blank, the label will default to <strong>Home</strong>. No HTML "
+"allowed."
+msgstr ""
+
+#: includes/trailblaze-options.php:206
+msgid "Double Right Angled Quote"
+msgstr ""
+
+#: includes/trailblaze-options.php:210
+msgid "Single Right Angled Quote"
+msgstr ""
+
+#: includes/trailblaze-options.php:214
+msgid "Right Arrow"
+msgstr ""
+
+#: includes/trailblaze-options.php:218
+msgid "Large List Dot"
+msgstr ""
+
+#: includes/trailblaze-options.php:222
+msgid "Medium List Dot"
+msgstr ""
+
+#: includes/trailblaze-options.php:226
+msgid "Vertical Bar"
+msgstr ""
+
+#: includes/trailblaze-options.php:230
+msgid "Broken Vertical Bar"
+msgstr ""
+
+#: includes/trailblaze-options.php:234
+msgid "Forward Slash"
+msgstr ""
+
+#: trailblaze.php:64
+msgid "Settings"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://heavyheavy.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Add breadcrumb navigation to your post, pages and custom post types with a "
+"template tag."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Heavy Heavy"
+msgstr ""

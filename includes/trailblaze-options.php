@@ -21,8 +21,8 @@ function wap8_trailblaze_submenu_page() {
 
 	add_submenu_page(
 		'options-general.php',                           // parent page to add the menu link to
-		__( 'Trailblaze Settings', 'wap8plugin-i18n' ),  // page title
-		__( 'Trailblaze', 'wap8plugin-i18n' ),           // menu link title
+		__( 'Trailblaze Settings', 'trailblaze' ),       // page title
+		__( 'Trailblaze', 'trailblaze' ),                // menu link title
 		'manage_options',                                // restrict this page to only those who can manage options
 		'wap8-trailblaze-options',                       // unique ID for this menu page
 		'wap8_trailblaze_options_cb'                     // callback function to render the page HTML
@@ -65,7 +65,7 @@ function wap8_trailblaze_options_cb() {
 		<?php
 			settings_fields( '_wap8_trailblaze_settings_group' );
 			do_settings_sections( 'wap8-trailblaze-options' );
-			submit_button( __( 'Save Settings', 'wap8plugin-i18n' ) );
+			submit_button( __( 'Save Settings', 'trailblaze' ) );
 		?>
 	</form>
 </div>	
@@ -111,7 +111,7 @@ function wap8_trailblaze_admin_init() {
 	// add settings field for home page link label
 	add_settings_field(
 		'trailblaze_home',                               // unique ID for this field
-		__( 'Home Page Link Label', 'wap8plugin-i18n' ), // field title
+		__( 'Home Page Link Label', 'trailblaze' ),      // field title
 		'wap8_trailblaze_home_label_field_cb',           // callback function to render this form input
 		'wap8-trailblaze-options',                       // page ID to render this form input
 		'trailblaze_display_settings_section'            // section ID where this form input should appear
@@ -120,7 +120,7 @@ function wap8_trailblaze_admin_init() {
 	// add settings field for breadcrumbs separator
 	add_settings_field(
 		'trailblaze_separator',                           // unique ID for this field
-		__( 'Breadcrumbs Separator', 'wap8plugin-i18n' ), // field title
+		__( 'Breadcrumbs Separator', 'trailblaze' ),      // field title
 		'wap8_trailblaze_separator_field_cb',             // callback function to render this form input
 		'wap8-trailblaze-options',                        // page ID to render this form input
 		'trailblaze_display_settings_section'             // section ID where this form input should appear
@@ -147,7 +147,7 @@ function wap8_trailblaze_admin_init() {
 function wap8_trailblaze_display_settings_section_cb() {
 
 ?>
-<p><?php _e( 'You can set how your breadcrumbs will be displayed on your website. Please remember that breadcrumbs will not displayed until you have added the <code>wap8_trailblaze()</code> to your theme.', 'wap8plugin-i18n' ); ?></p>
+<p><?php _e( 'You can set how your breadcrumbs will be displayed on your website. Please remember that breadcrumbs will not displayed until you have added the <code>wap8_trailblaze()</code> to your theme.', 'trailblaze' ); ?></p>
 <?php
 
 }
@@ -179,7 +179,7 @@ function wap8_trailblaze_home_label_field_cb() {
 		);
 
 	echo "<input type='text' id='trailblaze_home' name='_wap8_trailblaze_settings[trailblaze_home]' class='regular-text' value='{$options['trailblaze_home']}' />";
-	echo "<p class='description'>" . __( 'If left blank, the label will default to <strong>Home</strong>. No HTML allowed.', 'wap8plugin-i18n' ) . "</p>";
+	echo "<p class='description'>" . __( 'If left blank, the label will default to <strong>Home</strong>. No HTML allowed.', 'trailblaze' ) . "</p>";
 
 }
 
@@ -203,35 +203,35 @@ function wap8_get_trailblaze_separator_items() {
 
 	$items = array(
 		'double-right-angled-quote' => array(
-			'label'  => __( 'Double Right Angled Quote', 'wap8plugin-i18n' ),
+			'label'  => __( 'Double Right Angled Quote', 'trailblaze' ),
 			'entity' => '&#187;',
 		),
 		'single-right-angled-quote' => array(
-			'label'  => __( 'Single Right Angled Quote', 'wap8plugin-i18n' ),
+			'label'  => __( 'Single Right Angled Quote', 'trailblaze' ),
 			'entity' => '&#8250;',
 		),
 		'right-arrow' => array(
-			'label'  => __( 'Right Arrow', 'wap8plugin-i18n' ),
+			'label'  => __( 'Right Arrow', 'trailblaze' ),
 			'entity' => '&#8594;',
 		),
 		'large-list-dot' => array(
-			'label'  => __( 'Large List Dot', 'wap8plugin-i18n' ),
+			'label'  => __( 'Large List Dot', 'trailblaze' ),
 			'entity' => '&#149;',
 		),
 		'medium-list-dot' => array(
-			'label'  => __( 'Medium List Dot', 'wap8plugin-i18n' ),
+			'label'  => __( 'Medium List Dot', 'trailblaze' ),
 			'entity' => '&#183;',
 		),
 		'vertical-bar' => array(
-			'label'  => __( 'Vertical Bar', 'wap8plugin-i18n' ),
+			'label'  => __( 'Vertical Bar', 'trailblaze' ),
 			'entity' => '&#124;',
 		),
 		'broken-vertical-bar' => array(
-			'label'  => __( 'Broken Vertical Bar', 'wap8plugin-i18n' ),
+			'label'  => __( 'Broken Vertical Bar', 'trailblaze' ),
 			'entity' => '&#166;',
 		),
 		'forward-slash' => array(
-			'label'  => __( 'Forward Slash', 'wap8plugin-i18n' ),
+			'label'  => __( 'Forward Slash', 'trailblaze' ),
 			'entity' => '&#047;',
 		),
 	);

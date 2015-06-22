@@ -4,7 +4,7 @@ Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
 Compatible up to: 4.2.2
 Tested up to: 4.2.2
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
@@ -82,3 +82,6 @@ Yes. Though we have added custom taxonomy archives to the breadcrumbs, the bread
 = 1.0.8 =
 * Properly escaping HTML in the output
 * Updated the base language file
+
+= 1.0.9 =
+* Changed text domain name space and updated language files
