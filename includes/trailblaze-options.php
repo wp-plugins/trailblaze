@@ -103,7 +103,7 @@ function wap8_trailblaze_admin_init() {
 	// add display settings section
 	add_settings_section(
 		'trailblaze_display_settings_section',         // unique ID for this section
-		__( 'Display Settings', 'wap8plugin-i8n' ),    // section title
+		__( 'Display Settings', 'trailblaze' ),        // section title
 		'wap8_trailblaze_display_settings_section_cb', // callback function to render a description for this section
 		'wap8-trailblaze-options'                      // page ID to render this section on
 	);

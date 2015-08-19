@@ -1,15 +1,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Trailblaze\n"
-"POT-Creation-Date: 2015-06-22 16:58-0600\n"
-"PO-Revision-Date: 2015-06-22 16:58-0600\n"
-"Last-Translator: Heavy Heavy <hello@heavyheavy.com>\n"
-"Language-Team: Heavy Heavy <hello@heavyheavy.com>\n"
+"POT-Creation-Date: 2015-08-19 18:10-0500\n"
+"PO-Revision-Date: 2015-08-19 18:09-0500\n"
+"Last-Translator: We Are Pixel8 <hello@wearepixel8.com>\n"
+"Language-Team: We Are Pixel8 <hello@wearepixel8.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: trailblaze.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -19,41 +20,47 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/trailblaze-breadcrumbs.php:31
+#: includes/trailblaze-breadcrumbs.php:33
 msgid "Home"
 msgstr ""
 
-#: includes/trailblaze-breadcrumbs.php:132
-#: includes/trailblaze-breadcrumbs.php:142
-#: includes/trailblaze-breadcrumbs.php:165
-#: includes/trailblaze-breadcrumbs.php:207
+#: includes/trailblaze-breadcrumbs.php:100
+#: includes/trailblaze-breadcrumbs.php:348
+msgid " Archive"
+msgstr ""
+
+#: includes/trailblaze-breadcrumbs.php:171
+#: includes/trailblaze-breadcrumbs.php:187
+#: includes/trailblaze-breadcrumbs.php:218
+#: includes/trailblaze-breadcrumbs.php:262
 #, php-format
 msgid " Page %s"
 msgstr ""
 
-#: includes/trailblaze-breadcrumbs.php:211
-#: includes/trailblaze-breadcrumbs.php:314
+#: includes/trailblaze-breadcrumbs.php:267
+#: includes/trailblaze-breadcrumbs.php:395
 msgid "Search Results for &ldquo;"
 msgstr ""
 
-#: includes/trailblaze-breadcrumbs.php:227
+#: includes/trailblaze-breadcrumbs.php:286
 msgid "404 Error: Page not found"
 msgstr ""
 
-#: includes/trailblaze-breadcrumbs.php:241
-#: includes/trailblaze-breadcrumbs.php:255
-#: includes/trailblaze-breadcrumbs.php:272
-#: includes/trailblaze-breadcrumbs.php:284
-#: includes/trailblaze-breadcrumbs.php:293
-#: includes/trailblaze-breadcrumbs.php:300
-#: includes/trailblaze-breadcrumbs.php:308
-#: includes/trailblaze-breadcrumbs.php:315
-#: includes/trailblaze-breadcrumbs.php:324
-#: includes/trailblaze-breadcrumbs.php:334
+#: includes/trailblaze-breadcrumbs.php:302
+#: includes/trailblaze-breadcrumbs.php:321
+#: includes/trailblaze-breadcrumbs.php:339
+#: includes/trailblaze-breadcrumbs.php:349
+#: includes/trailblaze-breadcrumbs.php:361
+#: includes/trailblaze-breadcrumbs.php:371
+#: includes/trailblaze-breadcrumbs.php:379
+#: includes/trailblaze-breadcrumbs.php:388
+#: includes/trailblaze-breadcrumbs.php:396
+#: includes/trailblaze-breadcrumbs.php:406
+#: includes/trailblaze-breadcrumbs.php:417
 msgid " Page "
 msgstr ""
 
-#: includes/trailblaze-breadcrumbs.php:339
+#: includes/trailblaze-breadcrumbs.php:422
 msgid "Page "
 msgstr ""
 
@@ -132,8 +139,7 @@ msgid "Settings"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "http://heavyheavy.com"
+msgid "http://erikford.me/plugins/trailblaze-breadcrumbs-plugin/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -144,4 +150,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Heavy Heavy"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://heavyheavy.com"
 msgstr ""

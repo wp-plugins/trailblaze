@@ -2,16 +2,23 @@
 Contributors: heavyheavy, wearepixel8
 Tags: breadcrumbs, breadcrumb, navigation, menu
 Requires at least: 3.1
-Compatible up to: 4.2.2
-Tested up to: 4.2.2
-Stable tag: 1.0.9
+Compatible up to: 4.3
+Tested up to: 4.3
+Stable tag: 1.1.0
 License: GPLv2
 
 Add breadcrumb navigation to your posts, pages and custom post types with a template tag.
 
 == Description ==
 
-With Trailblaze, you can add breadcrumb navigational links to your WordPress theme by using the template tag, `wap8_trailblaze()`. This template tag can be added to the single post, page, single custom post type and/or archive, including custom post type archive, templates.
+With Trailblaze, you can add breadcrumb navigational links to your WordPress theme by using the template tag, `wap8_trailblaze()`. This template tag can be added to the following templates:
+
+* Archive Templates (categories, tags, post formats, custom post types, custom taxonomies, date based archives)
+* Singular Templates (post, page, custom post type)
+* Search Template
+* 404 Template
+
+For more information, please see this [blog post](http://erikford.me/plugins/trailblaze-breadcrumbs-plugin/).
 
 == Installation ==
 
@@ -25,7 +32,7 @@ To add the template tag to your theme, insert the following code, preferably out
      wap8_trailblaze();
 } ?>`
 
-The HTML elements that will wrap the breadcrumbs are:
+The markup contains structured data for search engine optimization and contain class names for easy styling:
 
 * The wrapping element is `<nav class="breadcrumbs" itemprop="breadcrumbs">`.
 * The breadcrumb separator will be wrapped with `<span class="crumb-separator">`.
@@ -85,3 +92,8 @@ Yes. Though we have added custom taxonomy archives to the breadcrumbs, the bread
 
 = 1.0.9 =
 * Changed text domain name space and updated language files
+
+= 1.1.0 =
+* Added structured data to the markup
+* Added support for post format archives
+* Fixed an issue where the post categories were not hierarchical

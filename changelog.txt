@@ -49,3 +49,10 @@ Trailblaze 1.0.9
 ================
 
 * Changed text domain name space and updated language files
+
+Trailblaze 1.1.0
+================
+
+* Added structured data to the markup
+* Added support for post format archives
+* Fixed an issue where the post categories were not hierarchical

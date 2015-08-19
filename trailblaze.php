@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Trailblaze
-Plugin URI: http://heavyheavy.com
+Plugin URI: http://erikford.me/plugins/trailblaze-breadcrumbs-plugin/
 Description: Add breadcrumb navigation to your post, pages and custom post types with a template tag.
-Version: 1.0.9
+Version: 1.1.0
 Author: Heavy Heavy
 Author URI: http://heavyheavy.com
 Conributors: We Are Pixel8
